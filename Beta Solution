@@ -89,3 +89,105 @@ public class Task3 {
 
 
 
+//Task4
+
+
+import java.util.Scanner;
+public class Task4 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int sum = 0;
+        int count = 0;
+        int min = 0;
+        int max = 0;
+        int pos = 0;
+        System.out.println("Enter 10 numbers:");
+
+        while (count < 10) {
+            int num = sc.nextInt();
+            
+            if (num > 0 && num % 2 != 0) {
+                if (pos == 0) {
+                    min = num;
+                    max = num;
+                } 
+                else {
+                    if (num < min) {
+                        min = num;
+                    }
+                    if (num > max) {
+                        max = num;
+                    }
+                }
+                sum += num;
+                pos++;
+            }
+            count++;
+        }
+        if (pos == 0) {
+            System.out.println("No odd positive numbers found");
+        } 
+        else {
+            double average = (double) sum / pos;
+            System.out.println("Sum = " + sum);
+            System.out.println("Minimum = " + min);
+            System.out.println("Maximum = " + max);
+            System.out.println("Average = " + average);
+        }
+    }
+}
+
+
+//Task5
+
+
+import java.util.Scanner;
+public class Task5 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int sum = 0;
+        int count = 0;
+        int min = 0; 
+        int max = 0; 
+        int zeroCount = 0;
+        System.out.println("Enter numbers for three consecutive zeros to stop:");
+
+        while (zeroCount < 3) {
+            int num = sc.nextInt();
+            if (num == 0) {
+                zeroCount++;
+            } 
+            else {
+                zeroCount = 0; 
+                sum += num;
+                count++;
+                if (count == 1) {
+                    min = num;
+                    max = num;
+                } 
+                else {
+                    if (num < min) {
+                        min = num;
+                    }
+                    if (num > max) {
+                        max = num;
+                    }
+                }
+            }
+        }
+
+        if (count == 0) {
+            System.out.println("No numbers found");
+        } 
+        else {
+            double average = (double) sum / count;
+            System.out.println("Sum = " + sum);
+            System.out.println("Minimum = " + min);
+            System.out.println("Maximum = " + max);
+            System.out.println("Average = " + average);
+        }
+    }
+}
+
+
+
