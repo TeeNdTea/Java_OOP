@@ -1,0 +1,91 @@
+//Task 1
+
+public class Task1a{
+  public static void main(String[]args){
+    int i = 2;
+    while(i<=50){
+      if(i!=50){
+        System.out.print(i+", ");
+      }
+      else{
+        System.out.print(i);
+      }
+      i+=4;
+    }
+  }
+}
+
+public class Task1b {
+    public static void main(String[] args) {
+        int p = 1; 
+        int diff = 2; 
+        int count = 1; 
+        while (count <= 15) {
+            System.out.print(p + " ");
+            p += diff;
+            diff++;  
+            count++; 
+        }
+    }
+}
+
+
+
+//Task2
+
+
+public class Task2 {
+    public static void main(String[] args) {
+        for (int i = 2; i <= 20; i += 2) {
+            System.out.print(i + " ");
+        }
+        for (int i = 18; i >= 2; i -= 2) {
+            System.out.print(i + " ");
+        }
+    }
+}
+
+
+//Task3
+
+
+import java.util.Scanner;
+public class Task3 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int sum = 0;
+        int count = 0;
+        int min = 0;
+        int max = 0;
+        System.out.println("Enter 10 numbers:");
+
+        while (count < 10) {
+            int num = sc.nextInt();
+            sum += num;
+            
+            if (count == 0) {
+                min = num;
+                max = num;
+            } 
+            else {
+                if (num < min) {
+                    min = num;
+                }
+                if (num > max) {
+                    max = num;
+                }
+            }
+            
+            count++;
+        }
+        
+        double average = (double) sum / 10;
+        System.out.println("Sum = " + sum);
+        System.out.println("Minimum = " + min);
+        System.out.println("Maximum = " + max);
+        System.out.println("Average = " + average);
+    }
+}
+
+
+
