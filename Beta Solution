@@ -191,3 +191,95 @@ public class Task5 {
 
 
 
+//Task6
+
+
+import java.util.Scanner;
+public class Task6 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        double sumNum = 0;
+        double sumWts = 0;
+        for (int i = 1; i <= 5; i++) {
+            System.out.print("Enter num " + i + " & ");
+            System.out.println("Enter weight " + i + ": ");
+            double num = sc.nextDouble();
+            double weight = sc.nextDouble();
+            sumNum += num * weight;
+            sumWts += weight;
+        }
+        double weightAvg = sumNum / sumWts;
+        System.out.println("Weighted Average = " + weightAvg);
+    }
+}
+
+
+//Task7
+
+
+import java.util.Scanner;
+public class Task7 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the number:");
+        int input = sc.nextInt();
+        int p = 1, q = 1;
+        int next = p + q;
+        int sum = p + q;
+        System.out.print(p + " " + q);
+        while (next <= input) {
+            System.out.print(" " + next);
+            sum += next;
+            p = q;
+            q = next;
+            next = p + q;
+        }
+        System.out.println();
+        System.out.println("Sum = " + sum);
+    }
+}
+
+
+//Task8
+
+
+import java.util.Scanner;
+public class Task8 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);        
+        System.out.println("Enter the first number:");
+        int num1 = sc.nextInt();        
+        System.out.println("Enter the second number:");
+        int num2 = sc.nextInt();
+        int p, q;
+        if (num1 < num2) {
+            p = num1;
+            q = num2;
+        } 
+        else {
+            p = num2;
+            q = num1;
+        }
+        int primeNo = 0;
+        for (int i = p; i <= q; i++) {
+            if (i > 1) { 
+                int prime = 1; 
+                for (int j = 2; j * j <= i; j++) {
+                    if (i % j == 0) {
+                        prime = 0; 
+                        break;
+                    }
+                }
+                if (prime == 1) {
+                    primeNo++;
+                }
+            }
+        }
+
+        System.out.println("There are " + primeNo + " prime numbers between " + p + " and " + q + ".");
+    }
+}
+
+
+
+
