@@ -282,4 +282,99 @@ public class Task8 {
 
 
 
+//Task9
+import java.util.Scanner;
+public class Task9 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        // a
+        System.out.println("Enter a number:");
+        int num = sc.nextInt();
+        int temp = num;
+        int count = 0;        
+        while (temp != 0) {
+            temp /= 10;
+            count++;
+        }
+        System.out.println(count + " digits.");
+        
+        //b
+        System.out.println();
+        temp = num;
+        int div = 1;
+        for (int i = 1; i < count; i++) {
+            div *= 10;
+        }
+        while (div > 0) {
+            int digit = temp / div;
+            System.out.print(digit * 7 + " ");
+            temp %= div;
+            div /= 10;
+        }
+    }
+}
+
+
+//Task10
+
+import java.util.Scanner;
+public class Task10{
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the amount of money:");
+        int amt = sc.nextInt();
+        
+        int count500 = 0, count100 = 0, count50 = 0, count10 = 0, count5 = 0, count1 = 0;
+        
+        while (amt > 0) {
+            if (amt >= 500) {
+                count500++;
+                amt -= 500;
+            } 
+            else if (amt >= 100) {
+                count100++;
+                amt -= 100;
+            } 
+            else if (amt >= 50) {
+                count50++;
+                amt -= 50;
+            } 
+            else if (amt >= 10) {
+                count10++;
+                amt -= 10;
+            } 
+            else if (amt >= 5) {
+                count5++;
+                amt -= 5;
+            } 
+            else if (amt >= 1) {
+                count1++;
+                amt -= 1;
+            }
+        }
+        
+        if (count500 > 0) {
+            System.out.println(count500 + " 500's note");
+        }
+        if (count100 > 0) {
+            System.out.println(count100 + " 100's note");
+        }
+        if (count50 > 0) {
+            System.out.println(count50 + " 50's note");
+        }
+        if (count10 > 0) {
+            System.out.println(count10 + " 10's note");
+        }
+        if (count5 > 0) {
+            System.out.println(count5 + " 5's note");
+        }
+        if (count1 > 0) {
+            System.out.println(count1 + " 1's note");
+        }
+    }
+}
+
+
+
 
